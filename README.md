@@ -10,15 +10,16 @@ A single static page, written in plain HTML and CSS with a little JavaScript for
 
 ## Files
 
-- `index.html`: the whole page (markup, styles and script)
-- `intapp.png`, `ltplabs.png`, `car.png`: logos and photo used in the Experience section
+- `wrangler.jsonc`: Cloudflare config (publishes the `public` folder)
+- `public/index.html`: the whole page (markup, styles and script)
+- `public/intapp.png`, `public/ltplabs.png`, `public/car.png`: logos and photo used in the Experience section
 
 ## Run it locally
 
-Open `index.html` in a browser. Or serve the folder:
+Open `public/index.html` in a browser. Or serve the folder:
 
 ```
-python -m http.server 8000
+python -m http.server 8000 --directory public
 ```
 
 then visit http://localhost:8000.
