@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matilde Duarte · Computer Engineer</title>
+<meta name="description" content="Matilde Duarte: computer engineer and MEIC master's student at IST. Cloud infrastructure, observability and distributed systems.">
+<meta property="og:title" content="Matilde Duarte · Computer Engineer">
+<meta property="og:description" content="Cloud infrastructure, observability and distributed systems. Master's student at IST Lisbon.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matilde.dev">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238f72d6'/%3E%3Cstop offset='1' stop-color='%23e07fa6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url%28%23g%29'/%3E%3Cpath d='M19 47V18L32 35L45 18V47' fill='none' stroke='white' stroke-width='7' stroke-linejoin='miter' stroke-linecap='butt'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white: #ffffff; --off: #f4f3f0; --ink: #1c1c1c; --body: #555; --muted: #888; --line: #e8e8e8;
+    --accent1: #4a9e7f; --accent2: #4a7ab5; --accent3: #c4956a;
+    --grad: linear-gradient(135deg, #4a9e7f, #4a7ab5);
+    --wrap: 1040px; --gutter: clamp(1.25rem, 5vw, 3rem);
+  }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { font-family: "DM Sans", system-ui, sans-serif; background: var(--white); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* HEADER */
+  header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .bar { display: flex; align-items: center; justify-content: space-between; height: 4rem; gap: 1.5rem; }
+  .brand { font-family: "DM Serif Display", serif; font-size: 1.25rem; text-decoration: none; letter-spacing: -0.01em; }
+  .bar nav { display: flex; align-items: center; gap: 0.25rem; }
+  .bar nav a { text-decoration: none; font-size: 0.92rem; font-weight: 500; color: var(--muted); padding: 0.45rem 0.8rem; border-radius: 8px; transition: color .2s, background .2s; }
+  .bar nav a:hover { color: var(--ink); background: var(--off); }
+  .bar nav a.ext { color: var(--ink); }
+  .bar nav .sep { width: 1px; height: 1.1rem; background: var(--line); margin: 0 0.4rem; }
+  a:focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; border-radius: 6px; }
+
+  /* HERO */
+  .hero { position: relative; overflow: hidden; padding: clamp(4rem, 12vw, 9rem) 0 clamp(3.5rem, 9vw, 7rem); }
+  .blob { position: absolute; pointer-events: none; border-radius: 50%; background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 100%, transparent) 0%, color-mix(in srgb, var(--c) 92%, transparent) 20%, color-mix(in srgb, var(--c) 62%, transparent) 42%, color-mix(in srgb, var(--c) 28%, transparent) 62%, color-mix(in srgb, var(--c) 9%, transparent) 82%, transparent 100%); }
+  .blob.a { width: 50vw; height: 50vw; max-width: 640px; max-height: 640px; background: var(--accent1); top: -20%; right: -10%; }
+  .blob.b { width: 35vw; height: 35vw; max-width: 460px; max-height: 460px; background: var(--accent2); bottom: -20%; left: 0; }
+  .hero .wrap { position: relative; }
+  .tag { display: inline-flex; align-items: center; gap: .5rem; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--accent1); margin-bottom: 1.4rem; }
+  .tag::before { content: ""; width: 24px; height: 2px; background: var(--accent1); }
+  h1 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: clamp(3.4rem, 9vw, 7.5rem); line-height: 1; letter-spacing: -0.03em; margin-bottom: 1.6rem; }
+  .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .lede { font-size: clamp(1.02rem, 1.6vw, 1.25rem); font-weight: 300; color: var(--body); max-width: 54ch; line-height: 1.75; margin-bottom: 2.4rem; }
+  .cta { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.5rem; border-radius: 100px; font-size: .92rem; font-weight: 500; text-decoration: none; border: 1px solid var(--ink); transition: transform .2s, box-shadow .2s, background .2s; }
+  .btn.solid { background: var(--ink); color: var(--white); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+  .btn.ghost:hover { background: var(--white); }
+  .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  /* SECTIONS */
+  section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
+
+  /* One continuous page colour, with soft splashes of colour */
+  .page { position: relative; overflow: clip; }
+  .page > .blob { z-index: 0; }
+  .page main, .page footer { position: relative; z-index: 1; }
+  .blob.green { --c: rgba(74,158,127,0.2); }
+  .blob.blue { --c: rgba(58,104,176,0.19); }
+  .blob.pink { --c: rgba(224,127,166,0.22); }
+  .blob.purple { --c: rgba(117,82,204,0.18); }
+  .label { font-size: .82rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; display: flex; align-items: center; gap: .6rem; }
+  .label::after { content: ""; height: 1px; width: 48px; background: #d8d8d8; }
+  h2 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: clamp(2rem, 4.5vw, 3.4rem); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: clamp(2rem, 4vw, 3rem); }
+
+  /* EXPERIENCE ROWS */
+  .row { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem 3rem; padding: 2.2rem 0; border-top: 1px solid var(--line); }
+  .row:first-of-type { border-top: 0; padding-top: 0; }
+  .when { font-size: .85rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: .45rem; }
+  .row h3 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: clamp(1.35rem, 2.4vw, 1.8rem); line-height: 1.2; letter-spacing: -0.01em; }
+  .org { font-size: .98rem; color: var(--accent2); font-weight: 500; margin: .2rem 0 .9rem; display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+  .row p { color: var(--body); max-width: 62ch; margin-bottom: .6rem; }
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1rem; }
+  .chip { font-size: .8rem; font-weight: 500; padding: .3rem .8rem; border-radius: 100px; background: var(--ink); color: var(--white); }
+  .chip.soft { background: rgba(74,122,181,.08); color: var(--accent2); border: 1px solid rgba(74,122,181,.35); }
+  .row-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+  .tile { flex: none; margin-top: 1rem; width: 164px; height: 140px; display: grid; place-items: center; }
+  .tile img { display: block; height: auto; max-width: 100%; }
+  .tile .l-intapp { width: 164px; }
+  .tile .l-ltp { width: 112px; }
+  .tile .l-car { width: 164px; }
+
+  /* EDUCATION */
+  .edu { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+  .card { background: var(--white); border: 1px solid #ebebeb; border-radius: 16px; padding: 1.6rem; transition: transform .25s, box-shadow .25s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.07); }
+  .card .when { padding: 0; margin-bottom: .8rem; display: block; }
+  .card.now { border-color: rgba(74,158,127,.5); }
+  .card.now .when { color: var(--accent1); }
+  .card h3 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 1.3rem; line-height: 1.25; margin-bottom: .3rem; }
+  .card .school { font-size: .92rem; font-weight: 500; color: var(--body); margin-bottom: .7rem; }
+  .card p { font-size: .94rem; color: #777; line-height: 1.6; }
+
+  /* PROJECT */
+  a.project { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem 3rem; align-items: start; text-decoration: none; color: inherit; border-radius: 24px; transition: transform .25s; }
+  a.project:not(.soon):hover { transform: translateY(-3px); }
+  a.project.soon { cursor: default; }
+  .go { display: inline-flex; align-items: center; gap: .4rem; font-size: .92rem; font-weight: 500; color: var(--accent2); margin-top: .6rem; }
+  a.project:not(.soon):hover .go { text-decoration: underline; }
+  a.project.soon .live-only, a.project:not(.soon) .soon-only { display: none; }
+  .project p { color: var(--body); max-width: 56ch; margin-bottom: .7rem; }
+  .status { display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 500; color: var(--accent1); margin-bottom: .8rem; }
+  .status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent1); }
+  .project h3 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: .8rem; }
+  .stack { background: #dce8f5; border-radius: 20px; padding: 1.8rem; }
+  .stack h4 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 1.15rem; color: #1c2f45; margin-bottom: 1rem; }
+  .stack ul { list-style: none; display: grid; gap: .7rem; }
+  .stack li { color: #3d5b7c; font-size: .95rem; line-height: 1.5; }
+  .stack li b { color: #2d5a8e; font-weight: 500; }
+
+  /* OUTSIDE */
+  .outside { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 3rem; max-width: 760px; }
+  .outside div { padding: 1rem 0; border-top: 1px solid var(--line); }
+  .outside strong { display: block; font-weight: 500; margin-bottom: .15rem; }
+  .outside span { color: #777; font-size: .95rem; }
+
+  /* CONTACT */
+  .contact { text-align: left; }
+  .contact h2 { margin-bottom: 1rem; }
+  .contact p { color: var(--body); font-weight: 300; font-size: 1.1rem; max-width: 46ch; margin-bottom: 2rem; }
+  footer { border-top: 1px solid #ebebeb; padding: 1.6rem 0; font-size: .85rem; color: var(--muted); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
+
+  /* REVEAL (only when JS runs) */
+  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .btn, .card { transition: none; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 860px) {
+    .row { grid-template-columns: 1fr; gap: .2rem; }
+    .when { padding-top: 0; }
+    .tile { height: 80px; margin-top: .6rem; margin-bottom: .6rem; place-items: center start; }
+    .edu { grid-template-columns: 1fr; }
+    a.project { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .bar nav a.sec { display: none; }
+    .bar nav .sep { display: none; }
+    .outside { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="brand">Matilde Duarte</a>
+    <nav aria-label="Primary">
+      <a class="sec" href="#experience">Experience</a>
+      <a class="sec" href="#education">Education</a>
+      <a class="sec" href="#projects">Projects</a>
+      <span class="sep"></span>
+      <a class="ext" href="https://github.com/Matilde-rad" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="ext" href="https://www.linkedin.com/in/matilde-ribeiro-duarte" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+  <div data-fallback class="blob purple" style="width:73vw;height:63vw;top:0%;left:41vw"></div>
+  <div data-fallback class="blob green" style="width:44vw;height:62vw;top:8%;left:-27vw"></div>
+  <div data-fallback class="blob pink" style="width:66vw;height:75vw;top:18%;left:-1vw"></div>
+  <div data-fallback class="blob blue" style="width:58vw;height:62vw;top:25%;left:50vw"></div>
+  <div data-fallback class="blob pink" style="width:67vw;height:75vw;top:31%;left:-4vw"></div>
+  <div data-fallback class="blob green" style="width:52vw;height:66vw;top:39%;left:6vw"></div>
+  <div data-fallback class="blob blue" style="width:51vw;height:47vw;top:52%;left:59vw"></div>
+  <div data-fallback class="blob purple" style="width:55vw;height:55vw;top:54%;left:35vw"></div>
+  <div data-fallback class="blob green" style="width:49vw;height:77vw;top:65%;left:-15vw"></div>
+  <div data-fallback class="blob pink" style="width:45vw;height:59vw;top:72%;left:58vw"></div>
+  <div data-fallback class="blob blue" style="width:51vw;height:45vw;top:80%;left:6vw"></div>
+  <div data-fallback class="blob purple" style="width:56vw;height:58vw;top:86%;left:5vw"></div>
+  <div data-fallback class="blob pink" style="width:74vw;height:42vw;top:99%;left:-38vw"></div>
+
+<main id="top">
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="tag">Computer Engineering</div>
+      <h1>Hi, I'm<br><span class="grad">Matilde.</span></h1>
+      <p class="lede">Computer engineer and master's student at Instituto Superior Técnico in Lisbon. I like cloud infrastructure, observability, and building systems that tell you what's wrong before you have to ask.</p>
+      <div class="cta">
+        <a class="btn solid" href="https://www.linkedin.com/in/matilde-ribeiro-duarte" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn ghost" href="https://github.com/Matilde-rad" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="label">Experience</div>
+      <h2>Where I've<br>worked.</h2>
+
+      <div class="row reveal">
+        <div class="when">Summer 2026
+          <div class="tile"><img class="l-intapp" src="intapp.png" alt="Intapp logo"></div>
+        </div>
+        <div>
+          <div>
+              <h3>Associate Software Engineer Intern</h3>
+              <div class="org">Intapp · Lisbon</div>
+            </div>
+          <p>Built a Slack bot service that helps the team diagnose production errors faster. Alerts from Alertmanager are filtered, grouped and posted to Slack with one-click actions to diagnose, propose a fix, or open a Jira ticket. Each action pulls the relevant logs and hands them to a worker agent running in Kubernetes, which answers right in the thread.</p>
+          <div class="chips"><span class="chip">Java</span><span class="chip">Quarkus</span><span class="chip">Kubernetes</span><span class="chip">Alertmanager</span><span class="chip">Loki</span><span class="chip">CI/CD</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="when">Spring 2026
+          <div class="tile"><img class="l-ltp" src="ltplabs.png" alt="LTPlabs logo"></div>
+        </div>
+        <div>
+          <div>
+              <h3>Curricular Internship, Observability</h3>
+              <div class="org">LTPlabs</div>
+            </div>
+          <p>Designed and built the observability and alerting system for LTPlabs' AIR platform. Grafana alert rules feed a webhook that routes notifications to Microsoft Teams as adaptive cards, with monitoring on the alert channels themselves so a silent failure doesn't stay silent. Dashboards make system health readable at a glance.</p>
+          <div class="chips"><span class="chip">Grafana</span><span class="chip">Kubernetes</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span></div>
+        </div>
+      </div>
+
+      <div class="row reveal">
+        <div class="when">At FEUP
+          <div class="tile"><img class="l-car" src="car.png" alt="The U.Porto Formula Student car, number 320"></div>
+        </div>
+        <div>
+          <div>
+              <h3>Electronics &amp; Software Team Member</h3>
+              <div class="org">Formula Student · University of Porto</div>
+            </div>
+          <p>Part of the Electronics &amp; Software subdepartment of FEUP's Formula Student team, where everything you write ends up on a real race car. Built real-time sensor dashboards to monitor the car's systems during runs, worked on sensor integration, and wrote code for the microcontrollers that keep the car running.</p>
+          <div class="chips"><span class="chip soft">Embedded</span><span class="chip soft">Microcontrollers</span><span class="chip soft">Dashboards</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="label">Education</div>
+      <h2>Where I<br>studied.</h2>
+      <div class="edu">
+        <div class="card now reveal">
+          <span class="when">2026 – present</span>
+          <h3>MSc Computer Engineering</h3>
+          <div class="school">Instituto Superior Técnico, Lisbon</div>
+          <p>Master's at the Alameda campus, focused on cloud, DevOps and distributed systems.</p>
+        </div>
+        <div class="card reveal">
+          <span class="when">2023 – 2026</span>
+          <h3>BSc Computer Engineering</h3>
+          <div class="school">FEUP, University of Porto</div>
+          <p>The switch to tech, with a focus on systems and infrastructure.</p>
+        </div>
+        <div class="card reveal">
+          <span class="when">2020 – 2023</span>
+          <h3>BSc Hotel Management</h3>
+          <div class="school">Escola Superior de Hotelaria e Turismo do Estoril</div>
+          <p>Where I learned to work with people, manage complexity and care about the details others miss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="label">Projects</div>
+      <h2>What I'm<br>building.</h2>
+      <!-- Echoflow links to its own subdomain. It's marked "soon" (not clickable) until it's live:
+           when echoflow.matilde.dev is up, remove the word "soon" from the class below. -->
+      <a class="project soon reveal" href="https://echoflow.matilde.dev" aria-label="Echoflow">
+        <div>
+          <div class="status">In progress</div>
+          <h3>Echoflow</h3>
+          <p>A self-hosted music app that plays the same music on several devices at once, something streaming services don't let you do. Laptop, phone, TV and tablet, all in sync.</p>
+          <p>It's also my sandbox for real-world infrastructure: containers, Kubernetes, Terraform and CI/CD, run on a home server.</p>
+          <div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">PostgreSQL</span><span class="chip">Snapcast</span><span class="chip">Kubernetes</span></div>
+          <span class="go live-only">Open Echoflow ↗</span>
+          <span class="go soon-only" style="color:var(--muted)">echoflow.matilde.dev · launching soon</span>
+        </div>
+        <div class="stack">
+          <h4>What it's teaching me</h4>
+          <ul>
+            <li><b>Sync.</b> Keeping audio aligned across devices on the same network.</li>
+            <li><b>Infra.</b> Running something the way production does, on a tiny budget.</li>
+            <li><b>Ops.</b> Deployments, monitoring and recovery for a service I actually use.</li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="label">Outside the terminal</div>
+      <h2>Other<br>things.</h2>
+      <div class="outside reveal">
+        <div><strong>Languages</strong><span>Portuguese and English (C2). Learning Mandarin, Korean, French and German.</span></div>
+        <div><strong>Motorsports</strong><span>F1, Le Mans, WRC. Anything with an engine and a stopwatch.</span></div>
+        <div><strong>Cooking &amp; baking</strong><span>A mix of precise baking and chaotic cooking.</span></div>
+        <div><strong>Astrophotography</strong><span>Pointing cameras at the night sky.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact reveal">
+      <div class="label">Contact</div>
+      <h2>Let's talk.</h2>
+      <p>Open to conversations about cloud, DevOps and distributed systems. The best way to reach me is LinkedIn.</p>
+      <div class="cta">
+        <a class="btn solid" href="https://www.linkedin.com/in/matilde-ribeiro-duarte" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost" href="https://github.com/Matilde-rad" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Matilde Duarte</span>
+    <span>matilde.dev</span>
+  </div>
+</footer>
+</div>
+
+<script>
+
+  // Random colour splashes: colours and sizes come from fixed sets, positions are random,
+  // and nothing is placed in the middle of the page.
+  (function () {
+    var page = document.querySelector(".page");
+    if (!page) return;
+    var COLOURS = ["green", "blue", "pink", "purple"];   // palette (defined in CSS)
+    var SIZES = [34, 44, 56, 68];                         // set of sizes, in vw
+    var COUNT = 13;
+    var CENTRE_HALF = 12;                                 // vw kept clear either side of the middle...
+    var CENTRE_EXTRA = 0.35;                              // ...plus a share of the blob's own width
+    page.querySelectorAll("[data-fallback]").forEach(function (el) { el.remove(); });
+    function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+    for (var i = 0; i < COUNT; i++) {
+      var w = pick(SIZES), h = pick(SIZES);
+      var need = CENTRE_HALF + CENTRE_EXTRA * w;
+      var cx = 50 + (Math.random() < 0.5 ? -1 : 1) * (need + Math.random() * (60 - need));
+      var top = (i / (COUNT - 1)) * 96 + (Math.random() * 8 - 4);
+      var d = document.createElement("div");
+      d.className = "blob " + pick(COLOURS);
+      d.style.cssText = "width:" + w + "vw;height:" + h + "vw;top:" + Math.max(-2, Math.min(97, top)).toFixed(1) +
+        "%;left:" + (cx - w / 2).toFixed(1) + "vw";
+      page.insertBefore(d, page.firstChild);
+    }
+  })();
+  document.documentElement.classList.add("js");
+  document.querySelectorAll("a.project.soon").forEach((a) =>
+    a.addEventListener("click", (e) => e.preventDefault()));
+  const els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("in");
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.12 });
+    els.forEach((el) => io.observe(el));
+  } else {
+    els.forEach((el) => el.classList.add("in"));
+  }
+</script>
+</body>
+</html>
